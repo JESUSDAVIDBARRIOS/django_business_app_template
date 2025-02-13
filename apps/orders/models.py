@@ -1,6 +1,7 @@
 from django.db import models
 
 from apps.clients.models import ClientModel, AddressModel
+from apps.products.models import ProductModel
 
 class OrderModel(models.Model):
 
@@ -19,4 +20,5 @@ class OrderItemModel(models.Model):
     quantity = models.IntegerField()
     unit_price = models.DecimalField(max_digits=10, decimal_places=2)
     order = models.ForeignKey(OrderModel, on_delete=models.CASCADE)
+    product = models.ForeignKey(ProductModel, on_delete=models.CASCADE)
     # TODO: Add a foreign key to the ProductModel.
