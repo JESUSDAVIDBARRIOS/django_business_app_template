@@ -20,7 +20,8 @@ def route_index(request):
     """
     routes = [
         "get_orders_woocommerce",
-        "get_local_orders"
+        "get_local_orders",
+        "edit_product",
     ]
     return Response(routes)
 
